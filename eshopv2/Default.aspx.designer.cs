@@ -10,16 +10,16 @@
 namespace eshopv2 {
     
     
-    public partial class _Default {
+    public partial class eshopDefault1 {
         
         /// <summary>
-        /// canonicalUrl control.
+        /// mainMenuVerticalV2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal canonicalUrl;
+        protected global::eshopv2.user_controls.MainMenuVerticalV2 mainMenuVerticalV2;
         
         /// <summary>
         /// slider1 control.
@@ -56,6 +56,24 @@ namespace eshopv2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::eshopv2.user_controls.Banner banner3;
+        
+        /// <summary>
+        /// banner4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner banner4;
+        
+        /// <summary>
+        /// banner5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::eshopv2.user_controls.Banner banner5;
         
         /// <summary>
         /// rptPromotions control.

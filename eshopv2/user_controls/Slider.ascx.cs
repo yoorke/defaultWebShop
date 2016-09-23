@@ -27,8 +27,8 @@ namespace eshopv2.user_controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-                loadSlider();
+            //if (!Page.IsPostBack)
+                //loadSlider();
         }
 
         public void loadSlider()

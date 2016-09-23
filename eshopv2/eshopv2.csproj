@@ -135,8 +135,8 @@
     <Content Include="css\style.min.css">
       <DependentUpon>style.css</DependentUpon>
     </Content>
-    <Content Include="Default.aspx" />
-    <Content Include="eshopDefault.aspx" />
+    <Content Include="Default.old.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="js\bundle.js" />
     <Content Include="js\bundle.min.js">
       <DependentUpon>bundle.js</DependentUpon>
@@ -209,12 +209,12 @@
     <Compile Include="customPage.aspx.designer.cs">
       <DependentUpon>customPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Default.old.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
+      <DependentUpon>Default.old.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Default.old.aspx.designer.cs">
+      <DependentUpon>Default.old.aspx</DependentUpon>
     </Compile>
     <Compile Include="eshop2.Master.cs">
       <DependentUpon>eshop2.Master</DependentUpon>
@@ -223,12 +223,12 @@
     <Compile Include="eshop2.Master.designer.cs">
       <DependentUpon>eshop2.Master</DependentUpon>
     </Compile>
-    <Compile Include="eshopDefault.aspx.cs">
-      <DependentUpon>eshopDefault.aspx</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="eshopDefault.aspx.designer.cs">
-      <DependentUpon>eshopDefault.aspx</DependentUpon>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="eshopDefault.Master.cs">
       <DependentUpon>eshopDefault.Master</DependentUpon>
