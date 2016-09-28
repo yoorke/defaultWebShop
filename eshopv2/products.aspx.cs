@@ -286,7 +286,7 @@ namespace eshopv2
                                 attributes.Add(new AttributeValue(int.Parse(value.Value), value.Text, attributeID, 0, string.Empty, 0));
                 }
 
-            List<Product> products = new ProductBL().GetProducts(ViewState["categoryUrl"].ToString(), brands, attributes, sort, cmbPriceFrom.SelectedItem.Text, cmbPriceTo.SelectedItem.Text, true);
+            List<Product> products = new ProductBL().GetProducts(ViewState["categoryUrl"].ToString(), brands, attributes, sort, cmbPriceFrom.SelectedItem.Text, cmbPriceTo.SelectedItem.Text, bool.Parse(ConfigurationManager.AppSettings["includeSubcategoriesInProductList"]));
 
             PagedDataSource pagedDataSource = new PagedDataSource();
             pagedDataSource.DataSource = products;

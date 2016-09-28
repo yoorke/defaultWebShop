@@ -7081,6 +7081,12 @@ body {
   padding: 0.5em;
   color: #fff;
 }
+.product_slider a:hover {
+  text-decoration: none;
+}
+.product_slider h2:hover {
+  color: #eee;
+}
 @keyframes fadein {
   from {
     opacity: 0;

@@ -99,6 +99,7 @@ namespace webshopAdmin
                         imgLarge.Visible = false;
                         imgHome.Visible = false;
                         imgThumb.Visible = false;
+                        cmbBrand.SelectedValue = "0";
                     }
 
                     //ViewState["dropDownCollection"] = null;
@@ -132,7 +133,7 @@ namespace webshopAdmin
 
             CategoryBL categoryBL = new CategoryBL();
             //cmbCategory.DataSource = categoryBL.GetCategories();
-            cmbCategory.DataSource = categoryBL.GetNestedCategoriesDataTable();
+            cmbCategory.DataSource = categoryBL.GetNestedCategoriesDataTable(false, true);
             cmbCategory.DataTextField = "name";
             cmbCategory.DataValueField = "categoryID";
             cmbCategory.DataBind();
@@ -156,6 +157,16 @@ namespace webshopAdmin
             cmbUnitOfMeasure.DataTextField = "FullName";
             cmbUnitOfMeasure.DataValueField = "unitOfMeasureID";
             cmbUnitOfMeasure.DataBind();
+
+            cmbCategories.DataSource = categoryBL.GetNestedCategoriesDataTable();
+            cmbCategories.DataTextField = "name";
+            cmbCategories.DataValueField = "categoryID";
+            cmbCategories.DataBind();
+
+            if (!bool.Parse(ConfigurationManager.AppSettings["productInMultipleCategories"]))
+                divProductInMultipleCategories.Visible = false;
+            else
+                btnAddProductToCategory.Enabled = cmbCategory.SelectedIndex > 0 ? true : false;
         }
 
         private void loadSupplier()
@@ -240,6 +251,7 @@ namespace webshopAdmin
                         }
                     }
                 }
+                btnAddProductToCategory.Enabled = true;
             }
 
             if (product.Images != null)
@@ -335,7 +347,7 @@ namespace webshopAdmin
             //main data
             Product product = new Product();
             product.Name = txtName.Text;
-            product.Code = txtCode.Text;
+            product.Code = bool.Parse(ConfigurationManager.AppSettings["fillZeroCode"]) ? txtCode.Text.PadLeft(13, '0') : txtCode.Text;
             product.SupplierCode = txtSupplierCode.Text;
             product.Brand = new Brand();
             product.Brand.BrandID = int.Parse(cmbBrand.SelectedValue);
@@ -349,7 +361,7 @@ namespace webshopAdmin
             product.IsActive = chkActive.Checked;
             product.IsLocked = chkLocked.Checked;
             product.IsInStock = chkInStock.Checked;
-            product.Ean = txtEan.Text;
+            product.Ean = bool.Parse(ConfigurationManager.AppSettings["fillZeroBarcode"]) ? txtEan.Text.PadLeft(13, '0') : txtEan.Text;
             product.Specification = txtSpecification.Text;
             product.ProductID = (lblProductID.Value != string.Empty) ? int.Parse(lblProductID.Value) : 0;
             product.UnitOfMeasure = new UnitOfMeasure(int.Parse(cmbUnitOfMeasure.SelectedValue), cmbUnitOfMeasure.SelectedItem.Text, string.Empty);
@@ -367,6 +379,12 @@ namespace webshopAdmin
                 product.Categories = new List<Category>();
                 product.Categories.Add(new Category(int.Parse(cmbCategory.SelectedValue), cmbCategory.SelectedItem.Text, 0, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, 0, false, false));
                 product.Attributes = new List<AttributeValue>();
+
+                if(bool.Parse(ConfigurationManager.AppSettings["productInMultipleCategories"]))
+                    foreach (ListItem item in lstCategories.Items)
+                    {
+                        product.Categories.Add(new Category(int.Parse(item.Value), item.Text, 0, string.Empty, string.Empty, 0, 0, 0, string.Empty, true, -1, false, false));
+                    }
 
                 //foreach (object obj in TabContainer1.Controls)
                 //{
@@ -418,7 +436,8 @@ namespace webshopAdmin
         protected void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             createControls();
-
+            if (cmbCategory.SelectedIndex > 0)
+                btnAddProductToCategory.Enabled = true;
 
 
 
@@ -660,6 +679,23 @@ namespace webshopAdmin
                     //image.ImageUrl = "/images/" + image.ImageUrl;
                 //}
             }
+        }
+
+        protected void btnAddProductToCategory_Click(object sender, EventArgs e)
+        {
+            ListItem listItem = new ListItem(cmbCategories.SelectedItem.Text, cmbCategories.SelectedValue);
+            if(!lstCategories.Items.Contains(listItem))
+                lstCategories.Items.Add(listItem);
+        }
+
+        protected void btnRemoveProductFromCategory_Click(object sender, EventArgs e)
+        {
+            ListItem[] listItems = new ListItem[lstCategories.Items.Count];
+            lstCategories.Items.CopyTo(listItems, 0);
+
+            foreach (ListItem item in listItems)
+                if (item.Selected)
+                    lstCategories.Items.Remove(item);
         }
     }
 }
