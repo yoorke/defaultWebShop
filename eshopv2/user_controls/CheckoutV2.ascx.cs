@@ -84,7 +84,7 @@ namespace eshopv2.user_controls
             order.Phone = txtPhone.Text;
             order.Email = txtEmail.Text;
             order.Items = getItems();
-            order.User = new User(userID, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, null, string.Empty, string.Empty, DateTime.Now, string.Empty);
+            order.User = new User(userID, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, null, string.Empty, string.Empty, DateTime.Now, string.Empty, 0, 1);
             order.Name = (rdbUserType.SelectedValue == "2") ? txtCompanyName.Text : string.Empty;
             order.Pib = (rdbUserType.SelectedValue == "2") ? txtPib.Text : string.Empty;
             order.Payment = (order.Name != string.Empty) ? new Payment(int.Parse(rdbPaymentCompany.SelectedValue), rdbPaymentCompany.SelectedItem.Text) : new Payment(int.Parse(rdbPayment.SelectedValue.ToString()), rdbPayment.SelectedItem.Text);
