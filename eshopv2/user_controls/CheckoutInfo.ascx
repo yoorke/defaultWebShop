@@ -21,6 +21,27 @@
                                 <asp:Label ID="lblNumberOfProducts" runat="server" Text="0" CssClass="form-control"></asp:Label>
                             </div>
                         </div><!--form-group-->
+                        
+                        <hr />
+                        <div class="form-group">
+                            <label for="lblTotalWithTax" class="control-label col-sm-7">Iznos: </label>
+                            <div class="col-sm-5">
+                                <asp:Label ID="lblTotalWithTax" runat="server" Text="0,00" CssClass="form-control"></asp:Label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lblDiscount" class="control-label col-sm-7">Popust: </label>
+                            <div class="col-sm-5">
+                                <asp:Label ID="lblDiscount" runat="server" CssClass="form-control"></asp:Label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="lblTotal" class="control-label col-sm-7">Ukupno: </label>
+                            <div class="col-sm-5">
+                                <asp:Label ID="lblTotalWithDiscount" runat="server" CssClass="form-control"></asp:Label>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="lblTaxBase" class="control-label col-sm-7"><small>Osnovica: </small></label>
                             <div class="col-sm-5">
@@ -35,18 +56,6 @@
                         </div>
                         <hr />
                         <div class="form-group">
-                            <label for="lblTotalWithTax" class="control-label col-sm-7">Iznos: </label>
-                            <div class="col-sm-5">
-                                <asp:Label ID="lblTotalWithTax" runat="server" Text="0,00" CssClass="form-control"></asp:Label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lblDiscount" class="control-label col-sm-7">Popust: </label>
-                            <div class="col-sm-5">
-                                <asp:Label ID="lblDiscount" runat="server" Text="0,00" CssClass="form-control"></asp:Label>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="lblDelivery" class="control-label col-sm-7">Dostava: </label>
                             <div class="col-sm-5">
                                 <asp:Label ID="lblDelivery" runat="server" Text="0,00" CssClass="form-control"></asp:Label>
@@ -54,7 +63,7 @@
                         </div>
                         <hr />
                         <div class="form-group">
-                            <label for="lblTotal" class="control-label col-sm-7 total">Ukupno: </label>
+                            <label for="lblTotal" class="control-label col-sm-7 total">Ukupno sa dostavom: </label>
                             <div class="col-sm-5">
                                 <asp:Label ID="lblTotal" runat="server" Text="0,00" CssClass="form-control total"></asp:Label>
                             </div>
@@ -64,8 +73,8 @@
                 </div><!--col-->
                 <div class="col-lg-8 col-lg-offset-1">
                     <p>
-                        Cena dostave iznosi <span class="green">350,00</span> dinara za sve narudžbine čiji iznos ne prelazi <span class="green">10.000,00</span> dinara.
-                        Za iznose preko <span class="green"><b>10.000,00</b></span> dinara dostava je <span class="green"><b>BESPLATNA</b></span>.
+                        Cena dostave iznosi <span class="green"><%=ConfigurationManager.AppSettings["deliveryCost"] %></span> dinara za sve narudžbine čiji iznos ne prelazi <span class="green"><%=ConfigurationManager.AppSettings["freeDeliveryTotalValue"] %></span> dinara.
+                        Za iznose preko <span class="green"><b><%=ConfigurationManager.AppSettings["freeDeliveryTotalValue"] %></b></span> dinara dostava je <span class="green"><b>BESPLATNA</b></span>.
                     </p>
                     <p>
                         Sve narudžbine pristigle do 12:00 časova šalju se istog dana.

@@ -59,7 +59,7 @@
                         <p><asp:Literal ID="txtDelivery" runat="server" Text="-"></asp:Literal></p>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <p class="margin-bottom-0"><asp:Literal ID="lblPrice" runat="server" Text="MP 110.989 din"></asp:Literal></p>
+                        <p class="margin-bottom-0"><asp:Literal ID="ltrPrice" runat="server" Text="MP cena: "></asp:Literal><asp:Label ID="lblPrice" runat="server"></asp:Label><asp:Literal ID="ltrCurency" runat="server" Text=" din"></asp:Literal></p>
                         <p class="font-2em color-blue bold margin-bottom-0"><asp:Label ID="lblWebPrice" runat="server" Text="99.890 din" CssClass="web-price"></asp:Label></p>
                         <p><asp:Literal ID="lblSaving" runat="server" Text="Ušteda: 2.548,00 din"></asp:Literal></p>
                         <!--<asp:Button ID="btnCart" runat="server" CssClass="btnAddToCart" Text="Dodaj u korpu" OnClick="btnCart_Click" />-->

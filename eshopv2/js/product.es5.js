@@ -105,7 +105,12 @@ function btnProductCompareRemove_Click(productID) {
 
 function AddToCart(lblProductID) {
     var productID = parseInt($('#' + lblProductID).val());
-    var priceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblWebPrice")[0].innerHTML;
+    var webPriceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblWebPrice")[0].innerHTML;
+    webPriceString = webPriceString.replace('.', '');
+    webPriceString = webPriceString.replace(',', '.');
+    wePriceString = webPriceString.indexOf(" din") > -1 ? webPriceString.substring(0, webPriceString.indexOf(" din")) : webPriceString;
+    var webPrice = parseFloat(webPriceString);
+    var priceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblPrice")[0].innerHTML;
     priceString = priceString.replace('.', '');
     priceString = priceString.replace(',', '.');
     priceString = priceString.indexOf(" din") > -1 ? priceString.substring(0, priceString.indexOf(" din")) : priceString;
@@ -114,7 +119,7 @@ function AddToCart(lblProductID) {
     $.ajax({
         type: "POST",
         url: "/WebMethods.aspx/AddToCart",
-        data: JSON.stringify({ "productID": productID, "webPrice": price }),
+        data: JSON.stringify({ "productID": productID, "webPrice": webPrice, "price": price }),
         contentType: "application/json;charset=utf-8",
         datatype: "json",
         success: function success(msg) {

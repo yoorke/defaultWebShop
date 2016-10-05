@@ -168,21 +168,23 @@ namespace eshopv2.user_controls
             double discount = (ViewState["discount"] != null) ? double.Parse(ViewState["discount"].ToString()) : 0;
             CartBL cartBL = new CartBL();
 
-            foreach (GridViewRow row in dgvCart.Rows)
-            {
-                //if (double.Parse(((Label)row.FindControl("lblProductPrice")).Text) == double.Parse(((Label)row.FindControl("lblUserPrice")).Text))
-                //{
-                    price = double.Parse(((Label)row.FindControl("lblProductPrice")).Text);
-                    double discountPrice = price * (1 - ((double)discount) / 100);
-                    double quantity = double.Parse(((TextBox)row.FindControl("txtQuantity")).Text);
-                    int productID = int.Parse(((Label)row.FindControl("lblProductID")).Text);
-                    ((Label)row.FindControl("lblUserPrice")).Text = string.Format("{0:N2}", discountPrice);
-                    ((Label)row.FindControl("lblSum")).Text = string.Format("{0:N2}", (discountPrice * quantity));
-                    cartBL.UpdateCartProduct(Session["cartID"].ToString(), productID, quantity, price, discountPrice, -1);
-                //}
+            if(discount > 0)
+                foreach (GridViewRow row in dgvCart.Rows)
+                {
+                    //if (double.Parse(((Label)row.FindControl("lblProductPrice")).Text) == double.Parse(((Label)row.FindControl("lblUserPrice")).Text))
+                    //{
+                        price = double.Parse(((Label)row.FindControl("lblProductPrice")).Text);
+                        double discountPrice = price * (1 - ((double)discount) / 100);
+                        double quantity = double.Parse(((TextBox)row.FindControl("txtQuantity")).Text);
+                        int productID = int.Parse(((Label)row.FindControl("lblProductID")).Text);
+                        ((Label)row.FindControl("lblUserPrice")).Text = string.Format("{0:N2}", discountPrice);
+                        ((Label)row.FindControl("lblSum")).Text = string.Format("{0:N2}", (discountPrice * quantity));
+                        cartBL.UpdateCartProduct(Session["cartID"].ToString(), productID, quantity, price, discountPrice, -1);
+                    //}
                 
-            }
-            calculateTotal();
+                }
+
+            //calculateTotal();
         }
 
         protected void dgvCart_RowDeleting(object sender, GridViewDeleteEventArgs e)

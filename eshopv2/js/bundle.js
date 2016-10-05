@@ -154,7 +154,12 @@ function btnProductCompareRemove_Click(productID)
 
 function AddToCart(lblProductID) {
     var productID = parseInt($('#' + lblProductID).val());
-    var priceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblWebPrice")[0].innerHTML;
+    var webPriceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblWebPrice")[0].innerHTML;
+    webPriceString = webPriceString.replace('.', '');
+    webPriceString = webPriceString.replace(',', '.');
+    wePriceString = webPriceString.indexOf(" din") > -1 ? webPriceString.substring(0, webPriceString.indexOf(" din")) : webPriceString;
+    var webPrice = parseFloat(webPriceString);
+    var priceString = $('#' + lblProductID.substring(0, lblProductID.indexOf('lblProductID')) + "lblPrice")[0].innerHTML;
     priceString = priceString.replace('.', '');
     priceString = priceString.replace(',', '.');
     priceString = priceString.indexOf(" din") > -1 ? priceString.substring(0, priceString.indexOf(" din")) : priceString;
@@ -163,7 +168,7 @@ function AddToCart(lblProductID) {
     $.ajax({
         type: "POST",
         url: "/WebMethods.aspx/AddToCart",
-        data: JSON.stringify({ "productID": productID, "webPrice": price }),
+        data: JSON.stringify({ "productID": productID, "webPrice": webPrice, "price": price }),
         contentType: "application/json;charset=utf-8",
         datatype: "json",
         success: function (msg) {
@@ -529,14 +534,6 @@ jQuery(document).ready(function($){
 		event.preventDefault();
 		toggleNav();
 	});
-	//$('.cd-dropdown-trigger').on('mouseout', function (event) {
-	    //event.preventDefault();
-	    //toggleNav();
-	//})
-	//$('.cd-dropdown').on('mouseover', function (event) {
-	    //event.preventDefault();
-	    //toggleNav();
-	//})
 
 	//close meganavigation
 	$('.cd-dropdown .cd-close').on('click', function(event){
@@ -616,11 +613,6 @@ jQuery(document).ready(function($){
 		  	})
 		});
 	}
-	$('#mainMenuVerticalBackground').click(function (event) {
-	    event.preventDefault();
-	    toggleNav();
-	    $('#mainMenuVerticalBackground').hide();
-	})
 });
 /*
  * jQuery Templates Plugin 1.0.0pre

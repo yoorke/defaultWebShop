@@ -78,7 +78,7 @@ namespace eshopv2
             lblName.Text = product.Name;
             lblNamePrimary.Text = product.Name;
             lblDescription.Text = product.Description;
-            lblPrice.Text = "MP cena: " + string.Format("{0:N2}", product.Price) + " din";
+            lblPrice.Text = string.Format("{0:N2}", product.Price);
             lblWebPrice.Text = (product.Promotion == null) ? string.Format("{0:N2}", product.WebPrice) + " din" : string.Format("{0:N2}", product.Promotion.Price) + " din";
             lblSaving.Text = "Ušteda: " + string.Format("{0:N2}", product.Price - double.Parse(lblWebPrice.Text.Substring(0, lblWebPrice.Text.IndexOf(" din")))) + " din";
             lblSpecification.Text = (product.Specification != null) ? (!product.Specification.Contains("<table class='table table-striped'><tbody></table>") ? product.Specification : "Nema podataka") : "Nema podataka";

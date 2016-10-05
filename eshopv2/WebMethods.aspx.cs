@@ -77,10 +77,10 @@ namespace eshopv2
         }
 
         [WebMethod()]
-        public static string AddToCart(int productID, double webPrice)
+        public static string AddToCart(int productID, double webPrice, double price)
         {
             CartBL cartBL = new CartBL();
-            cartBL.AddProductToCart(productID, System.Web.HttpContext.Current.Session["cartID"].ToString(), 1, webPrice, webPrice);
+            cartBL.AddProductToCart(productID, System.Web.HttpContext.Current.Session["cartID"].ToString(), 1, price, webPrice);
             return JsonConvert.SerializeObject((cartBL.GetProductsCount(System.Web.HttpContext.Current.Session["cartID"].ToString()).ToString() + "|" + string.Format("{0:N2}", cartBL.GetTotal(System.Web.HttpContext.Current.Session["cartID"].ToString()))).Split('|'));
         }
 

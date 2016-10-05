@@ -103,13 +103,31 @@ namespace eshopv2 {
         protected global::System.Web.UI.WebControls.Literal txtDelivery;
         
         /// <summary>
+        /// ltrPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrPrice;
+        
+        /// <summary>
         /// lblPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblPrice;
+        protected global::System.Web.UI.WebControls.Label lblPrice;
+        
+        /// <summary>
+        /// ltrCurency control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltrCurency;
         
         /// <summary>
         /// lblWebPrice control.

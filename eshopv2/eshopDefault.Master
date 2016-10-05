@@ -207,15 +207,15 @@
 
     </form>
 
-    <%--<script src="<%=ResolveUrl("~/js/jquery-1.11.3.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/jquery-1.11.3.min.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/bootstrap.min.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/common.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/product.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/modernizr.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/jquery.menu-aim.js") %>"></script>
     <script src="<%=ResolveUrl("~/js/main.js") %>"></script>
-    <script src="<%=ResolveUrl("~/js/jquery.tmpl.min.js") %>"></script>--%>
-    <script src="<%=ResolveUrl("~/js/bundle.min.js") %>"></script>
+    <script src="<%=ResolveUrl("~/js/jquery.tmpl.min.js") %>"></script>
+    <%--<script src="<%=ResolveUrl("~/js/bundle.min.js") %>"></script>--%>
     <script id="dgvCartItemsTemplate" type="text/x-jquery-tmpl">
         <tr>
             <%--<td><img src="${imageUrl.substring(0, imageUrl.indexOf('.jpg')) + '-small.jpg'}" /></td>--%>

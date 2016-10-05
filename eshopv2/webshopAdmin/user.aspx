@@ -18,7 +18,7 @@
                 </div><!--btn-group-->
             </div><!--col-->
         </div><!--row-->
-        <div class="row">
+        <div class="row margin-top-2">
             <div class="col-lg-12">
                 <YT:CustomStatus ID="customStatus" runat="server" />
             </div>
