@@ -12,7 +12,7 @@
         <h3><asp:HyperLink ID="lblName" runat="server">ewqew</asp:HyperLink></h3>
         <p class="description"><asp:Label ID="lblDescription" runat="server"></asp:Label></p>
         <asp:Image ID="imgPromotion" runat="server" CssClass="img_promotion" Visible="false" />
-        <div class="price_div" runat="server" visible="false" id="price_div">
+        <div class="price_div" runat="server" id="price_div" style="display:none">
             <span class="price_label">M.P.</span>
             <asp:Label ID="lblPrice" runat="server" CssClass="price">312</asp:Label>
             <span class="price_label">din</span>

@@ -77,7 +77,8 @@ namespace eshopv2.user_controls
                 imgPromotion.ImageUrl = "~/images/" + _product.Promotion.ImageUrl;
                 imgPromotion.Visible = (_product.Promotion.ImageUrl != string.Empty) ? true : false;
 
-                price_div.Visible = true;
+                //price_div.Visible = true;
+                price_div.Style.Add("display", "block");
                 saving_div.Visible = true;
                 lblWebPrice.Attributes["class"] = "web_price color-red";
             }
