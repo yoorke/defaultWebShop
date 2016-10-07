@@ -21,7 +21,6 @@
                                 <asp:Label ID="lblNumberOfProducts" runat="server" Text="0" CssClass="form-control"></asp:Label>
                             </div>
                         </div><!--form-group-->
-                        
                         <hr />
                         <div class="form-group">
                             <label for="lblTotalWithTax" class="control-label col-sm-7">Iznos: </label>
