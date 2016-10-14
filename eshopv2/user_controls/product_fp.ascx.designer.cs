@@ -103,6 +103,15 @@ namespace eshopv2.user_controls {
         protected global::System.Web.UI.WebControls.Label lblPrice;
         
         /// <summary>
+        /// webprice_div control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl webprice_div;
+        
+        /// <summary>
         /// lblWebPrice control.
         /// </summary>
         /// <remarks>

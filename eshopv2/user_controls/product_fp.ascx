@@ -17,7 +17,7 @@
             <asp:Label ID="lblPrice" runat="server" CssClass="price">312</asp:Label>
             <span class="price_label">din</span>
         </div><!--price_div-->
-        <div class="webprice_div" id="webprice_div">
+        <div class="webprice_div" id="webprice_div" runat="server">
             <span class="webprice_label"></span>
             <asp:Label ID="lblWebPrice" runat="server">12313,12</asp:Label>
             <span class="webprice_label">din</span>

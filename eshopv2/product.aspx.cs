@@ -98,6 +98,11 @@ namespace eshopv2
             lnkCategory.Text = product.Categories[0].Name;
             ViewState["productUrl"] = product.Url;
             loadProductSliders(product.Brand, product.Categories[0]);
+
+            if(bool.Parse(ConfigurationManager.AppSettings["hidePrice"]) && ! User.Identity.IsAuthenticated)
+            {
+                orderDiv.Visible = false;
+            }
         }
 
         protected void btnCart_Click(object sender, EventArgs e)

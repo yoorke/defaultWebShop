@@ -93,6 +93,13 @@ namespace eshopv2.user_controls
                 lnkEditProduct.Visible = true;
                 lnkEditProduct.NavigateUrl = "/administrator/product.aspx?id=" + _product.ProductID;
             }
+
+            if(bool.Parse(ConfigurationManager.AppSettings["hidePrice"]) && !Page.User.Identity.IsAuthenticated)
+            {
+                price_div.Visible = false;
+                webprice_div.Visible = false;
+                saving_div.Visible = false;
+            }
         }
 
         protected void btnCart_Click(object sender, EventArgs e)
