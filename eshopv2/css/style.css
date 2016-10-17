@@ -6757,6 +6757,12 @@ body {
 .margin-top-2 {
   margin-top: 2em;
 }
+.checkbox input {
+  margin-left: 0 !important;
+}
+.radio input {
+  margin-left: 0 !important;
+}
 #top {
   background-color: #333;
   color: #f8f8f8;
@@ -6767,10 +6773,6 @@ body {
 #header {
   padding-top: 1em;
   padding-bottom: 1em;
-}
-#main-menu {
-  background-color: #175e87;
-  height: 40px;
 }
 #footer {
   color: #555;
@@ -6832,6 +6834,10 @@ body {
   color: #eee;
   font-size: 0.8em;
   padding: 0.5em 0;
+}
+#main-menu {
+  background-color: #175e87;
+  height: 40px;
 }
 #content {
   padding: 0;
@@ -6925,12 +6931,6 @@ body {
 }
 .product-content .main-image {
   margin: 0 auto;
-}
-.checkout .radio input {
-  margin-left: 0;
-}
-.checkout .radio label {
-  margin-right: 1em;
 }
 .status {
   width: 90%;

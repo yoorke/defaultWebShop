@@ -42,7 +42,7 @@ namespace eshopv2
         private void loadCheckout()
         {
             CartBL cartBL = new CartBL();
-            checkoutInfo1.CartItems = cartBL.GetProducts(Session["cartID"].ToString());
+            //checkoutInfo1.CartItems = cartBL.GetProducts(Session["cartID"].ToString());
         }
     }
 }

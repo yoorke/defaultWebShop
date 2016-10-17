@@ -169,6 +169,7 @@
     <Content Include="registration.aspx" />
     <Content Include="search.aspx" />
     <Content Include="user_controls\CategoryBanner.ascx" />
+    <Content Include="user_controls\CheckoutV3.ascx" />
     <Content Include="user_controls\MainMenuVertical.ascx" />
     <Content Include="user_controls\MainMenuVerticalV2.ascx" />
     <Content Include="Web.config" />
@@ -391,6 +392,13 @@
     </Compile>
     <Compile Include="user_controls\CheckoutV2.ascx.designer.cs">
       <DependentUpon>CheckoutV2.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="user_controls\CheckoutV3.ascx.cs">
+      <DependentUpon>CheckoutV3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="user_controls\CheckoutV3.ascx.designer.cs">
+      <DependentUpon>CheckoutV3.ascx</DependentUpon>
     </Compile>
     <Compile Include="user_controls\CustomStatus.ascx.cs">
       <DependentUpon>CustomStatus.ascx</DependentUpon>
@@ -1285,6 +1293,14 @@
     <Content Include="webshopAdmin\dsPrint.xsc">
       <DependentUpon>dsPrint.xsd</DependentUpon>
     </Content>
+    <Content Include="less\common.less" />
+    <Content Include="less\footer.less" />
+    <Content Include="less\header.less" />
+    <Content Include="less\product_fp.less" />
+    <Content Include="less\cart.less" />
+    <Content Include="less\checkout.less" />
+    <Content Include="less\main_menu.less" />
+    <Content Include="less\cart_fp.less" />
     <None Include="webshopAdmin\dsPrint.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsPrint2.Designer.cs</LastGenOutput>
@@ -1315,6 +1331,7 @@
     <Folder Include="App_Browsers\" />
     <Folder Include="App_code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="user_controls\checkout\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

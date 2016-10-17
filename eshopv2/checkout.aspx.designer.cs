@@ -22,21 +22,12 @@ namespace eshopv2 {
         protected global::System.Web.UI.WebControls.Literal canonicalUrl;
         
         /// <summary>
-        /// checkoutInfo1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::eshopv2.user_controls.CheckoutInfo checkoutInfo1;
-        
-        /// <summary>
         /// checkout1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::eshopv2.user_controls.CheckoutV2 checkout1;
+        protected global::eshopv2.user_controls.CheckoutV3 checkout1;
     }
 }
